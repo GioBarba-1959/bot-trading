@@ -51,7 +51,7 @@ def webhook():
     side = data['strategy']['order_action'].upper()
     quantity = 0.001  #data['strategy']['order_contracts']
     ticker = data['ticker'].upper()
-    order_price = data['strategy']['order_price']
+    order_price = round(data['strategy']['order_price'],2)
 
     order_response = order(side, quantity, ticker, order_price, data['passphrase'])
 
