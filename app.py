@@ -130,7 +130,7 @@ def webhook():
     order_response = orderBuy(quantity,'BTCEUR', order_price)
 
     if order_response:
-        sleep(1)
+        sleep(30)
         orderOCO_response= orderOCO(stopLoss, quantity, ticker, orderOCO_price)
         if orderOCO_response:
             return {
