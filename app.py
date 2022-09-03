@@ -123,7 +123,7 @@ def webhook():
     order_price = round(data['strategy']['order_price'],2)
     stopLoss=round(data['strategy']['open'],2)
     diff_P_SL=order_price-stopLoss
-    diff_P_TP=diff_P_SL*1.7
+    diff_P_TP=diff_P_SL*1.2
     orderOCO_price=round(order_price+diff_P_TP,2)
 
     #order_response = order(side, quantity, ticker, order_price, data['passphrase'])
