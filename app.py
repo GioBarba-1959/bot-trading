@@ -121,7 +121,7 @@ def webhook():
     
     #--------- arrotondamenti e calcolo prezzo vendita e stopLoss
     order_price = round(data['strategy']['order_price'],2)
-    stopLoss=round(data['strategy']['open'],2)
+    stopLoss=round(data['strategy']['stopLoss'],2)
     diff_P_SL=order_price-stopLoss
     diff_P_TP=diff_P_SL*1.5
     orderOCO_price=round(order_price+diff_P_TP,2)
