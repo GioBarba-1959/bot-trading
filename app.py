@@ -12,8 +12,8 @@ app = Flask(__name__)
 #app.secret_key = "manbearpig_MUDMAN888"
 apikey=os.environ.get('API_KEY')
 apisecret=os.environ.get('API_SECRET')
-qty=os.environ.get('QTY')
-tp=os.environ.get('TP')
+#qty=os.environ.get('QTY')
+#tp=os.environ.get('TP')
 
 
 client = Client(apikey, apisecret)
@@ -125,7 +125,7 @@ def webhook():
             "message": "Nice try, invalid passphrase"
         }
     side = data['strategy']['order_action'].upper()
-    quantity = float(qty) #0.001  data['strategy']['order_contracts']
+    quantity = 0.001  #data['strategy']['order_contracts']
     ticker = data['ticker'].upper()
     ticker='BTC/EUR'
     #--------- funziona solo per ordini BUY -----------------
@@ -146,7 +146,7 @@ def webhook():
     order_price = round(data['strategy']['order_price'],2)
     stopLoss=round(data['strategy']['stopLoss'],2)
     diff_P_SL=order_price-stopLoss
-    diff_P_TP=diff_P_SL*float(tp)
+    diff_P_TP=diff_P_SL*1.5   #float(tp)
     orderOCO_price=round(order_price+diff_P_TP,2)
 
     #order_response = order(side, quantity, ticker, order_price, data['passphrase'])
