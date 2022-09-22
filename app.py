@@ -37,11 +37,15 @@ def orderBuy(quantity, symbol, order_price):
        # }
        # )
        # print(response)
-        order = client.order_limit_buy(
+        #order = client.order_limit_buy(
+        #    symbol=symbol,
+        #    quantity=quantity,
+        #    price=order_price)
+        
+        order=client.order_market_sell(
             symbol=symbol,
-            quantity=quantity,
-            price=order_price)
-
+            quantity=quantity
+        )
         #order = client.create_order(symbol=symbol, side=side, type='BUY', quantity=quantity, timeInForce='GTC', price=order_price)
         print(order)
         response=True
