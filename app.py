@@ -85,7 +85,7 @@ def orderOCO(stopLoss, quantity, symbol, order_price,timeInForce='GTC'):
 
 @app.route('/')
 def welcome():
-    return "<h1>Questo è il mio secondo trading bot</h1>"
+    return "<h1>Questo è il mio trading ver. 1.0 bot</h1>"
 
 @app.route("/hello")
 def index():
