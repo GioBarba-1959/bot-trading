@@ -42,7 +42,7 @@ def orderBuy(quantity, symbol, order_price):
         #    quantity=quantity,
         #    price=order_price)
         
-        order=client.order_market_sell(
+        order=client.order_market_buy(
             symbol=symbol,
             quantity=quantity
         )
